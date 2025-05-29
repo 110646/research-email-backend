@@ -52,7 +52,7 @@ export default async function handler(req, res) {
 
     const resume_url = `https://your-app.com/resumes/${resume.originalFilename}`;
 
-    // 🧠 Step 1: Update user in Supabase
+    
     const { error: upsertError } = await supabase
       .from("users")
       .upsert({
@@ -70,7 +70,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "Supabase upsert failed" });
     }
 
-    // 🤖 Step 2: Send everything to OpenAI
+    
     const prompt = `
 You are an AI assistant helping a student email professors.
 
